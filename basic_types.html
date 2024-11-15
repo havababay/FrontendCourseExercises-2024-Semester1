@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let isActive = true;
+      let balance = 100;
+      let name = "John";
+      let arr = [1, 2, 3];
+
+      console.log(isActive);
+      console.log(balance);
+      console.log(name);
+
+      var a = 1;
+
+      function printValue() {
+        console.log(a);
+        console.log(name);
+      }
+
+      printValue();
+
+      // Using let
+      for (let j = 0; j < 3; j++) {
+        console.log("let loop before:", j);
+      }
+      //console.log("let loop after:", j);
+
+      const toUpperCase = function (str) {
+        return str.toUpperCase();
+      };
+
+      let namesArr = ["John", "Jane"];
+
+      let upperNamesArr = namesArr.map(toUpperCase);
+
+      function duplicate(str) {
+        return str + str;
+      }
+
+      let upperCaseArrow = namesArr.map((str) => duplicate(str));
+
+      console.log(upperCaseArrow);
+
+      let upperCaseFor = [];
+
+      for (let i = 0; i < namesArr.length; i++) {
+        upperCaseFor.push(toUpperCase(namesArr[i]));
+      }
+    </script>
+  </body>
+</html>

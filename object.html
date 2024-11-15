@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let car = {
+        color: "red",
+        model: "bmw",
+        year: 2019,
+        drive: function () {
+          console.log("driving");
+        },
+      };
+
+      let car2 = {
+        color: "black",
+        model: "bmw",
+        year: 2019,
+        drive: function () {
+          console.log("driving");
+        },
+      };
+
+      /*console.log(car.color);
+      console.log(car.model);
+      console.log(car.year);
+      console.log(car.drive());*/
+
+      car.serialNumber = 1234;
+      //console.log(car.serialNumber);
+      //console.log(car["serialNumber"]);
+
+      class Car {
+        constructor(color, model, year) {
+          this.color = color;
+          this.model = model;
+          this.year = year;
+        }
+        drive() {
+          console.log("driving");
+        }
+      }
+
+      let car3 = new Car("red", "bmw", 2019);
+      car3.serialNumber = 1234;
+      //console.log(car3.color);
+      //console.log(car3.serialNumber);
+
+      let var1;
+     // console.log(var1);
+      var1 = null;
+     // console.log(var1);
+      var1 = undefined;
+      //console.log(var1);
+      var arr = [];
+      var obj = {};
+
+      let person = { name : "john"}
+      console.log(person.age)
+      console.log(arr[0])
+
+      function printValue() {}
+
+      console.log(printValue());
+
+      function returnValue(val) {
+        return val;
+      }
+
+      let result = returnValue();
+      console.log(result.age);
+    </script>
+  </body>
+</html>
