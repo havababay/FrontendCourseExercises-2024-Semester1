@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Flights</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1><a href="index.html">OnoAir Flights</a></h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h2>Manage Flights</h2>
+        <div id="flight-table-section">
+             <!-- Destination Table Container -->
+            <table id="flightsTable">
+                <thead>
+                    <tr>
+                        <th>Flight No.</th>
+                        <th>Origin</th>
+                        <th>Destination</th>
+                        <th>Boarding</th>
+                        <th>Landing</th>
+                        <th>Seats</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Flight rows will be added dynamically -->
+                </tbody>
+            </table>
+            <button id="addFlightBtn" class="button">Add Flight</button>
+        </div>
+
+        <div id="flight-form-section" style="display: none;">
+            <h3>Add New Flight</h3>
+            <form id="flightForm">
+                <label for="flightNumber">Flight Number:</label>
+                <input type="text" id="flightNumber" required>
+
+                <label for="departureCode">Departure Destination Code:</label>
+                <input type="text" id="departureCode" maxlength="3" required>
+
+                <label for="landingCode">Landing Destination Code:</label>
+                <input type="text" id="landingCode" maxlength="3" required>
+
+                <label for="departureDateTime">Departure Date and Time:</label>
+                <input type="datetime-local" id="departureDateTime" required>
+
+                <label for="landingDateTime">Landing Date and Time:</label>
+                <input type="datetime-local" id="landingDateTime" required>
+
+                <label for="numberOfSeats">Number of Seats:</label>
+                <input type="number" id="numberOfSeats" min="1" required>
+
+                <div class="form-buttons">
+                    <button type="submit">Save Flight</button>
+                    <button type="button" id="cancelFlightForm">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Flight Booking System. All rights reserved.</p>
+        <a href="help.html"><img src="help-icon.png" alt="Help" title="Help and Support"></a>
+    </footer>
+    <script src="js/manage-flights.js"></script>
+</body>
+</html>
+
+

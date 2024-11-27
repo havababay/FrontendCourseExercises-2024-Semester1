@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Flight - OnoAir</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">OnoAir Flights</a></h1>
+    </header>
+    <main>
+        <h1>Book a Flight</h1>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <label for="origin-filter">Origin:</label>
+            <input type="text" id="origin-filter" placeholder="Enter origin city">
+            
+            <label for="destination-filter">Destination:</label>
+            <input type="text" id="destination-filter" placeholder="Enter destination city">
+            
+            <button id="search-button">Search</button>
+        </div>
+
+        <!-- Flight Table -->
+        <div id="notification" style="display: none;">No flights available</div>
+        <table id="flight-table">
+            <thead>
+                <tr>
+                    <th>Flight No.</th>
+                    <th>Origin</th>
+                    <th>Destination</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows populated dynamically -->
+            </tbody>
+        </table>
+
+        <!-- Booking Form -->
+        <div id="booking-form-container" style="display: none;">
+            <h2>Flight Booking</h2>
+            <form id="booking-form">
+                <div>
+                    <label>Origin:</label>
+                    <span id="booking-origin"></span>
+                </div>
+                <div>
+                    <label>Destination:</label>
+                    <span id="booking-destination"></span>
+                </div>
+                <div>
+                    <label>Boarding:</label>
+                    <span id="boarding-time"></span>
+                </div>
+                <div>
+                    <label>Landing:</label>
+                    <span id="landing-time"></span>
+                </div>
+                <div>
+                    <label for="num-passengers">No of Passengers:</label>
+                    <input type="number" id="num-passengers" min="1" max="100" value="1">
+                </div>
+                <div id="passenger-details">
+                    pts<!-- Dynamic Passenger Fields -->
+                </div>
+                <div class="button-container">
+                    <button type="button" id="save-booking">Save</button>
+                    <button type="button" id="cancel-booking">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Flight Booking System. All rights reserved.</p>
+        <a href="help.html"><img src="help-icon.png" alt="Help" title="Help and Support"></a>
+    </footer>
+    <script src="js/book-flight.js"></script>
+</body>
+</html>
+
+

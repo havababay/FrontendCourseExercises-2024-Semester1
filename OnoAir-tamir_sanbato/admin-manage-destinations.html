@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnoAir - Manage Destinations</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1><a href="index.html">OnoAir Flights</a></h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h2>Manage Destinations</h2>
+        <div id="destination-table-section">
+            <!-- Destination Table Container -->
+            <table id="destination-table">
+                <thead>
+                    <tr>
+                        <th>Destination</th>
+                        <th>Airport Name</th>
+                        <th>Airport Website</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be populated using JavaScript -->
+                </tbody>
+            </table>
+            <button id="add-destination-btn" class="button">Add Destination</button>
+        </div>
+
+        <!-- Destination Form -->
+        <div id="destination-form-section" style="display: none;">
+            <h2>New Destination</h2>
+            <form id="destination-form">
+                <label for="destination-name">Destination Name:</label>
+                <input type="text" id="destination-name" required>
+
+                <label for="airport-name">Airport Name:</label>
+                <input type="text" id="airport-name" required>
+
+                <label for="airport-website">Airport Website:</label>
+                <input type="url" id="airport-website" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" required>
+
+                <label for="destination-code">Destination Code (3 uppercase letters):</label>
+                <input type="text" id="destination-code" pattern="[A-Z]{3}" required>
+
+                <label for="image-url">Image URL:</label>
+                <input type="url" id="image-url" required>
+
+                <button type="submit" class="button">Save Destination</button>
+                <button id="cancel-form-btn" class="button">Cancel</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 OnoAir. All rights reserved.
+            <a href="help.html"><img src="help-icon.png" alt="Help" title="Help and Support"></a>
+        </p>
+    </footer>
+
+    <script src="js/manage-destinations.js"></script>
+</body>
+</html>

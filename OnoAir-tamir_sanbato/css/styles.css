@@ -1,0 +1,218 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #1d3557;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+.booking-container {
+    background-color: white;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.booking-container p {
+    margin: 5px 0;
+}
+
+.destination-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1d3557;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a img {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+footer a img:hover {
+    filter: brightness(1.2);
+}
+
+/* Main Content Area */
+main {
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 50px; /* To avoid footer overlap */
+}
+
+h1, h2 {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #1d3557;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+.section {
+    margin: 20px 0;
+}
+
+/* Button Styles */
+button, .button {
+    display: inline-block;
+    background-color: #457b9d;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+
+button:hover, .button:hover {
+    background-color: #1d3557;
+}
+
+/* Button Container (Flexbox Alignment) */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center aligns the buttons horizontally */
+    gap: 10px; /* Adds spacing between buttons */
+    margin-top: 10px; /* Optional spacing */
+}
+
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+th, td {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em; /* Reduced for compact layout */
+}
+
+thead {
+    background-color: #457b9d;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f4f4f9;
+}
+
+tr:hover {
+    background-color: #dce7f2;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+/* Form Styles */
+form {
+    display: inline-block;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    text-align: left;
+    width: 90%; /* Adjusted for better fit on all screens */
+    max-width: 400px; /* Limits form size on large screens */
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9em; /* Reduced for compact layout */
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+    border-color: #457b9d;
+    outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    h1, h2 {
+        font-size: 1.4em;
+    }
+
+    form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    table {
+        font-size: 0.85em;
+    }
+
+    button, .button {
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
+}
