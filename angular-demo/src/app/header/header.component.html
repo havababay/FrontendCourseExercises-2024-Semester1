@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/counter">Counter</button>
+    <button mat-menu-item routerLink="/demo">Demo</button>
+    <button mat-menu-item routerLink="/">Home</button>
+  </mat-menu>
+  <span>Angular Demo Application</span>
+</mat-toolbar>

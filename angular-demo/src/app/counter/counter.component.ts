@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { CounterValueComponent } from '../counter-value/counter-value.component';
 
 @Component({
   selector: 'app-counter',
-  imports: [],
+  imports: [MatButtonModule, CounterValueComponent],
   templateUrl: './counter.component.html',
   styleUrl: './counter.component.css'
 })
