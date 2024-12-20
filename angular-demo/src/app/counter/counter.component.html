@@ -2,4 +2,10 @@
 <app-counter-value [counter111]="counter"></app-counter-value><div>{{ counter + 90}}</div>
 <button (click)="increment()">Increment</button>
 <button (click)="decrement()">Decrement</button>
+@if ( isEven()) {
+  <div>Counter is even</div>
+}
+<div *ngIf="!isEven()">
+    Counter is odd
+</div>
 <button mat-flat-button color="primary" [disabled]="counter % 2 === 0">Disable when even</button>

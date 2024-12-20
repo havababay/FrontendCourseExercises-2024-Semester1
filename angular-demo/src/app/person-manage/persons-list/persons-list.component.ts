@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonsService } from '../persons.service';
 import { Person } from '../model/person';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-persons-list',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './persons-list.component.html',
   styleUrl: './persons-list.component.css',
 })
