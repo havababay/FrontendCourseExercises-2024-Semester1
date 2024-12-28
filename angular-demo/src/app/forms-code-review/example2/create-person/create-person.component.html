@@ -1,0 +1,29 @@
+<div>
+  <h1>Create Person</h1>
+  <form>
+    <mat-form-field>
+      <mat-label>First Name:</mat-label>
+      <input #firstName type="text" required matInput />
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Last Name:</mat-label>
+      <input #lastName type="text" required matInput />
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Email:</mat-label>
+      <input #email type="email" required matInput />
+    </mat-form-field>
+    @if (displayValidateFirstName) {
+      <mat-error>First Name is required</mat-error>
+    }
+    @if (displayValidateLastName) {
+      <mat-error>Last Name is required</mat-error>
+    }
+    @if (displayValidateEmail) {
+      <mat-error>Email is required</mat-error>
+    }
+    <button mat-raised-button color="primary" (click)="createPerson(firstName.value, lastName.value, email.value)">Create</button>
+  </form>
+</div>
