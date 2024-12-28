@@ -1,22 +1,31 @@
-<div> The system has {{persons.length}} persons</div>
+<div>The system has {{ persons.length }} persons</div>
 
 @for (person of persons; track person.id) {
- <div>
-    {{ person.firstName}} {{person.lastName}}
- </div>
+<div>{{ person.firstName }} {{ person.lastName }}</div>
 }
 
 <table>
-    <thead>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let person of persons">
-            <td>{{person.firstName}}</td>
-            <td>{{person.lastName}}</td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <td>Id</td>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of persons">
+      <td>{{ person.id }}</td>
+      <td>{{ person.firstName }}</td>
+      <td>{{ person.lastName }}</td>
+      <td>{{ person.email }}</td>
+      <td>
+        <button mat-flat-button color="primary" [routerLink]="['/person', person.id]">Edit</button>
+      </td>
+    </tr>
+  </tbody>
 </table>
+<button mat-flat-button color="primary" routerLink="/new-person">
+  Add new person
+</button>
