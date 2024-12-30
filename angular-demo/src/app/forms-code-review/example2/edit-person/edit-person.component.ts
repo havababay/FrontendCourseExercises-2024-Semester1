@@ -3,10 +3,13 @@ import { PersonsService } from '../../../person-manage/persons.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-edit-person',
-  imports: [MatFormFieldModule, FormsModule],
+  imports: [MatFormFieldModule, MatInputModule,FormsModule, CommonModule, MatButtonModule],
   templateUrl: './edit-person.component.html',
   styleUrl: './edit-person.component.css'
 })

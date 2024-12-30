@@ -5,10 +5,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { PersonsService } from '../../../person-manage/persons.service';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-create-person',
-  imports: [MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule],
+  imports: [MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, CommonModule],
   templateUrl: './create-person.component.html',
   styleUrl: './create-person.component.css',
 })

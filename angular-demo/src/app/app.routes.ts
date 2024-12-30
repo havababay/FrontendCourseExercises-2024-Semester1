@@ -18,6 +18,7 @@ export const routes: Routes = [
   { path: 'new-person', component: PersonFormComponent },
   { path: 'person/:id', component: PersonFormComponent },
   { path: 'new-person1', component: PersonForm1Component },
+  { path: 'person1/:id', component: PersonForm1Component },
   { path: 'new-person2', component: CreatePersonComponent },
   { path: 'person2/:id', component: EditPersonComponent },
 ];

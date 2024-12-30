@@ -22,10 +22,20 @@
       <td>{{ person.email }}</td>
       <td>
         <button mat-flat-button color="primary" [routerLink]="['/person', person.id]">Edit</button>
+        <button mat-raised-button [routerLink]="['/person1', person.id]">Edit1</button>
+        <button mat-raised-button color="primary" [routerLink]="['/person2', person.id]">Edit2</button>
       </td>
     </tr>
   </tbody>
 </table>
+<div>
 <button mat-flat-button color="primary" routerLink="/new-person">
   Add new person
 </button>
+<button mat-raised-button color="primary" routerLink="/new-person1">
+  Add new person1
+</button>
+<button mat-raised-button color="primary" routerLink="/new-person2">
+  Add new person2
+</button>
+</div>
