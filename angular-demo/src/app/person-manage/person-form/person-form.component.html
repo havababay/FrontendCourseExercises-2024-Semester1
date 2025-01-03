@@ -7,24 +7,51 @@
   <div>
     <mat-form-field>
       <mat-label>First Name</mat-label>
-      <input matInput name="firstName" required [(ngModel)]="newPerson.firstName"/>
+      <input matInput name="firstName" required [(ngModel)]="newPerson.firstName" pattern="^[a-zA-Z ]+$"/>
+      <mat-error>
+        Name must be letters only
+      </mat-error>
     </mat-form-field>
   </div>
   <div>
     <mat-form-field>
       <mat-label>Last Name</mat-label>
-      <input matInput name="lastName" required [(ngModel)]="newPerson.lastName"/>
+      <input matInput name="lastName" required [(ngModel)]="newPerson.lastName" pattern="^[a-zA-Z ]+$"/>
+      <mat-error>
+        Name must be letters only
+      </mat-error>
     </mat-form-field>
   </div>
   <div>
     <mat-form-field>
         <mat-label>Email</mat-label>
         <input matInput name="email" required email [(ngModel)]="newPerson.email"/>
+        <mat-error>
+          Email format issue
+        </mat-error>
       </mat-form-field>
+  </div>
+  <div>
+    <div ngModelGroup="phone" #phoneNumbers="ngModelGroup">Phone Numbers
+      <button mat-icon-button type="button" (click)="addPhoneNumber()">
+        <mat-icon>add</mat-icon>
+      </button>
+      @for (phone of newPerson.phoneNumbers; track phone.number; let idx = $index) {
+        <div>
+          <mat-form-field>
+            <mat-label>Phone Number</mat-label>
+            <input matInput name="phoneNumber" [(ngModel)]="phone.number" required name="phone-number-{{idx}}"/>
+          </mat-form-field>
+          <button mat-icon-button type="button" (click)="removePhoneNumber(idx)">
+            <mat-icon>remove</mat-icon>
+          </button>
+        </div>
+      }
+    </div>
   </div>
   <button mat-flat-button 
     type="submit"
-    color="primary" [disabled]="personForm.invalid">
+    color="primary" [disabled]="personForm.invalid || personForm.pristine">
     Save
   </button>
 </form>

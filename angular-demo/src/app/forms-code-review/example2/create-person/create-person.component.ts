@@ -39,6 +39,7 @@ export class CreatePersonComponent {
         firstName: firstName,
         lastName: lastName,
         email: email,
+        phoneNumbers: [],
       });
       this.router.navigate(['persons-list']);
     }
