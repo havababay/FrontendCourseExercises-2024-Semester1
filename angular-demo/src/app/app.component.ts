@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CounterComponent } from './counter/counter.component';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 

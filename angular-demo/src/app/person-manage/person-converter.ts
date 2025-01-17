@@ -4,7 +4,7 @@ import { PhoneNumber } from "./model/phone-number";
 
 export const personConverter = {
     toFirestore: (person: Person) => {
-        let simplePhoneNumbers =
+        const simplePhoneNumbers =
             person.phoneNumbers.map(phoneNumber => {
                 return {
                     number: phoneNumber.number
@@ -22,7 +22,7 @@ export const personConverter = {
     fromFirestore: (snapshot: QueryDocumentSnapshot, options: SnapshotOptions): Person => {
         const data = snapshot.data(options);
 
-        var phoneNumbers : PhoneNumber[] = [];
+        let phoneNumbers : PhoneNumber[] = [];
         if (data['phoneNumbers']) {
             phoneNumbers = data['phoneNumbers'].map((phoneNumber: { number: string; }) => {
                 return new PhoneNumber(phoneNumber.number);

@@ -14,9 +14,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './create-person.component.css',
 })
 export class CreatePersonComponent {
-  displayValidateFirstName: boolean = false;
-  displayValidateLastName: boolean = false;
-  displayValidateEmail: boolean = false;
+  displayValidateFirstName = false;
+  displayValidateLastName = false;
+  displayValidateEmail = false;
 
   constructor(private personService: PersonsService,
     private router : Router
