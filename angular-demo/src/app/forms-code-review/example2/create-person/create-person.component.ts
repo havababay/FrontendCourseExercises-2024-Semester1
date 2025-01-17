@@ -35,7 +35,7 @@ export class CreatePersonComponent {
       !this.displayValidateEmail
     ) {
       this.personService.add({
-        id: 0,
+        id: "",
         firstName: firstName,
         lastName: lastName,
         email: email,

@@ -1,36 +1,33 @@
 import { Injectable } from '@angular/core';
 import { Person } from './model/person';
+import { addDoc, collection, Firestore, getDocs } from '@angular/fire/firestore';
+import { personConverter } from './person-converter';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonsService {
-  private persons = [
-    new Person(1, 'John', 'Doe', 'V6zYl@example.com'),
-    new Person(2, 'Jane', 'Doe', 'qk9Ls@example.com'),
-    new Person(3, 'Moshe', 'Doe', 'V6zYl@example.com'),
-  ];
-  constructor() { }
+  constructor(private firestore : Firestore) { }
 
-  list() : Person[] {
-    return this.persons;
+  async list() : Promise<Person[]> {
+    const peopleCollection = collection(this.firestore, 'people').withConverter(personConverter)
+
+    const querySnapshot = await getDocs(peopleCollection);
+
+    return querySnapshot.docs.map(doc => doc.data());
   }
 
-  get(id : number) : Person | undefined{
-    return this.persons.find(p => p.id === id);
+  async get(id : string) : Promise<Person | undefined>{
+    // getDoc
+    return undefined;
   }
 
-  add(newPerson : Person) : void {
-    let maxId = Math.max(...this.persons.map(p => p.id)) + 1;
-    newPerson.id = maxId;
-    this.persons.push(newPerson);
+  async add(newPerson : Person) : Promise<void> {
+    const peopleCollection = collection(this.firestore, 'people').withConverter(personConverter)
+    await addDoc(peopleCollection, newPerson);
   }
 
-  update(existingPerson : Person) : void {
-    let index = this.persons.findIndex(p => p.id === existingPerson.id);
-    if (index === -1) {
-      throw new Error("Person not found");
-    }
-    this.persons[index] = existingPerson;
+  async update(existingPerson : Person) : Promise<void> {
+    // setDoc
   }
 }

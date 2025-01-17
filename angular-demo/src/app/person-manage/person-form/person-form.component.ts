@@ -16,29 +16,31 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './person-form.component.css',
 })
 export class PersonFormComponent implements OnInit {
-  newPerson: Person = new Person(0, '', '', '');
+  newPerson: Person = new Person('', '', '', '');
 
-  @Input() id = 0;
+  @Input() id = "";
 
-  @ViewChild('phoneNumbers') phoneNumbers? : NgModelGroup;
+  @ViewChild('phoneNumbers') phoneNumbers?: NgModelGroup;
 
-  constructor(private personService: PersonsService, private router: Router) {}
+  constructor(private personService: PersonsService, private router: Router) { }
   ngOnInit(): void {
-    if (this.id > 0) {
-      let temp = this.personService.get(Number(this.id));
-
-      if (temp) {
-        this.newPerson = temp;
-      } else {
-        // error handling
-      }
+    if (this.id) {
+      this.personService.get(this.id).then(
+        (temp?: Person) => {
+          if (temp) {
+            this.newPerson = temp;
+          } else {
+            // error handling
+          }
+        }
+      );
     }
   }
 
   onPersonFormSubmit() {
     console.log(this.newPerson);
-    if (this.id > 0) {
-      
+    if (this.id) {
+
     } else {
       this.personService.add(this.newPerson);
     }

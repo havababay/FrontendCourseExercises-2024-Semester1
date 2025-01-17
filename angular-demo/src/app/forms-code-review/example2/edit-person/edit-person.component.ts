@@ -28,7 +28,7 @@ export class EditPersonComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    this.editedPerson = this.personService.get(Number(this.id));
+    this.editedPerson = this.personService.get(this.id);
   }
   saveChanges(){
     this.displayValidateFirstName = !this.editedPerson.firstName || this.editedPerson.firstName == '' || this.editedPerson.firstName == undefined;

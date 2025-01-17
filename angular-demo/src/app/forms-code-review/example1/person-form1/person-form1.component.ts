@@ -14,25 +14,29 @@ import { PersonsService } from '../../../person-manage/persons.service';
   styleUrl: './person-form1.component.css',
 })
 export class PersonForm1Component implements OnInit {
-  newPerson: Person = new Person(0, '', '', '');
+  newPerson: Person = new Person('', '', '', '');
 
   @Input() id = "0";
 
-  constructor(private personService : PersonsService){}
+  constructor(private personService: PersonsService) { }
 
   ngOnInit(): void {
     console.log('Provided ID:', this.id);
 
     if (this.id) {
-      let personFromService = this.personService.get(parseInt(this.id));
-      console.log('Person loaded:', this.newPerson);
+      this.personService.get(this.id).then(
+        (personFromService?: Person) => {
+          console.log('Person loaded:', this.newPerson);
 
-      if (personFromService) {
-        this.newPerson = personFromService;
-        console.log('Person loaded:', this.newPerson);
-      }
+          if (personFromService) {
+            this.newPerson = personFromService;
+            console.log('Person loaded:', this.newPerson);
+          }
+        }
+      );
+
     }
   }
 
-  onSubmitRegistration() {}
+  onSubmitRegistration() { }
 }
